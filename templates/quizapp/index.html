@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="{% static 'quizapp/css/style.css' %}">
+</head>
+<body>
+
+  <!-- START SCREEN -->
+  <div class="container" id="startScreen">
+    <h1>Quiz Challenge</h1>
+    <p>Test your knowledge</p>
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div class="container hidden" id="quizScreen">
+    <div class="top-bar">
+      <span id="progress">Question 1 / 5</span>
+      <span id="score">Score: 0</span>
+    </div>
+
+    <h2 id="question"></h2>
+
+    <div id="options" class="options"></div>
+
+    <button id="nextBtn" class="hidden" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div class="container hidden" id="resultScreen">
+    <h1>Quiz Completed 🎉</h1>
+    <p>Your Score</p>
+    <h2 id="finalScore"></h2>
+    <button onclick="restartQuiz()">Restart</button>
+  </div>
+
+  <script src="{% static 'quizapp/js/script.js' %}"></script>
+</body>
+</html>
