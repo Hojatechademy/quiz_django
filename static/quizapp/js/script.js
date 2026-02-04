@@ -16,7 +16,7 @@ const nextBtn = document.getElementById("nextBtn");
 
 async function startQuiz() {
     //fetching the data from the backend
-    const res = await fetch("http://127.0.0.1:8000/questions/");
+    const res = await fetch("/questions/");
     questions = await res.json();
 
   startScreen.classList.add("hidden");
@@ -87,7 +87,7 @@ function nextQuestion() {
 }
 
 async function showResult() {
-    const res = await fetch("http://127.0.0.1:8000/finish/", {
+    const res = await fetch("/finish/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
